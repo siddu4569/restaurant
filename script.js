@@ -29,6 +29,12 @@ function signUp() {
         return;
     }
 
+    // Check if admin already exists
+    if (role === "admin" && users.some(user => user.role === "admin")) {
+        alert("An admin account already exists. Only one admin is allowed.");
+        return;
+    }
+
     // Save user data
     users.push({ role, username, password });
     localStorage.setItem("users", JSON.stringify(users));
