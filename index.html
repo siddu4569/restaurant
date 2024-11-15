@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant System</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Ordering System</h1>
+
+        <!-- Sign-Up Form -->
+        <div id="signup-form">
+            <h2>Sign Up</h2>
+            <label for="signup-role">Role:</label>
+            <select id="signup-role">
+                <option value="customer">Customer</option>
+                <option value="admin">Admin</option>
+            </select><br><br>
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" placeholder="Enter Username"><br><br>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" placeholder="Enter Password"><br><br>
+            <button onclick="signUp()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="hidden">
+            <h2>Login</h2>
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" placeholder="Enter Username"><br><br>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" placeholder="Enter Password"><br><br>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign Up</a></p>
+        </div>
+
+        <!-- Customer Interface -->
+        <div id="customer-interface" class="hidden">
+            <h2>Place Your Order</h2>
+            <label for="order">Order Details:</label>
+            <input type="text" id="order" placeholder="E.g., Pizza, Burger">
+            <button onclick="placeOrder()">Place Order</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Admin Interface -->
+        <div id="admin-interface" class="hidden">
+            <h2>Admin Dashboard</h2>
+            <ul id="orders-list"></ul>
+            <button onclick="clearOrders()">Clear Orders</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
